@@ -1,0 +1,165 @@
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Smartphone,
+  Globe,
+  Monitor,
+  Layout,
+  Server,
+  Database,
+  Code2,
+} from "lucide-react";
+
+export const navLinks = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "skills",
+    title: "Skills",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
+];
+
+const services = [
+  {
+    title: "Web Development",
+    icon: <Globe className="w-10 h-10 text-[#00cea8]" />,
+  },
+  {
+    title: "Mobile Development",
+    icon: <Smartphone className="w-10 h-10 text-[#bf61ff]" />,
+  },
+  {
+    title: "Desktop Applications",
+    icon: <Monitor className="w-10 h-10 text-[#56ccf2]" />,
+  },
+  {
+    title: "Full Stack Solutions",
+    icon: <Layout className="w-10 h-10 text-[#ff61d2]" />,
+  },
+];
+
+const skills = [
+  {
+    category: "Frontend",
+    items: [
+      { name: "React", icon: "reactjs" },
+      { name: "HTML 5", icon: "html" },
+      { name: "CSS 3", icon: "css" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+    ],
+  },
+  {
+    category: "Backend",
+    items: [
+      { name: "Laravel", icon: "laravel" },
+      { name: "Node JS", icon: "nodejs" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "MySQL", icon: "mysql" },
+    ],
+  },
+  {
+    category: "Mobile & Desktop",
+    items: [
+      { name: "Flutter", icon: "flutter" },
+      { name: "Electron", icon: "electron" },
+      { name: "Tauri", icon: "tauri" },
+    ],
+  },
+];
+
+const experiences = [
+  {
+    title: "Full-stack Developer",
+    company_name: "AgroAlim POS System",
+    icon: <Monitor />,
+    iconBg: "#383E56",
+    date: "Enterprise Project",
+    points: [
+      "Built cross-platform web and desktop applications for wholesale inventory management.",
+      "Integrated complex backend APIs with Firebase for real-time data synchronization.",
+      "Automated critical business workflows, improving efficiency for enterprise-level operations.",
+      "Optimized system performance for handling large-scale POS transactions.",
+    ],
+  },
+  {
+    title: "Full-stack Developer",
+    company_name: "Wholesale Marketplace Platform",
+    icon: <Layout />,
+    iconBg: "#E6DEDD",
+    date: "E-commerce Project",
+    points: [
+      "Developed a robust web platform using React and Laravel for wholesale product distribution.",
+      "Created a high-performance mobile application using Flutter for remote buyers.",
+      "Implemented seamless payment gateways and order tracking systems.",
+      "Ensured multi-platform synchronization and high-availability architecture.",
+    ],
+  },
+  {
+    title: "Freelance Developer",
+    company_name: "Self-Employed",
+    icon: <Code2 />,
+    iconBg: "#383E56",
+    date: "Past - Present",
+    points: [
+      "Developed numerous interactive web applications and portfolio experiments using Three.js.",
+      "Built custom desktop applications for niche business needs using Electron and Tauri.",
+      "Collaborated with clients to deliver high-performance, modern software solutions.",
+    ],
+  },
+];
+
+const projects = [
+  {
+    name: "AgroAlim POS System",
+    description:
+      "A complete enterprise wholesale management suite featuring a web dashboard, desktop POS application, and mobile stock tracking.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "electron", color: "green-text-gradient" },
+      { name: "firebase", color: "pink-text-gradient" },
+    ],
+    image: "", // Assets will be linked or placeholders used
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Wholesale Marketplace",
+    description:
+      "A multi-platform marketplace connecting wholesale distributors with remote buyers, featuring real-time inventory and Flutter mobile app.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "flutter", color: "green-text-gradient" },
+      { name: "postgresql", color: "pink-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Portfolio Experiments",
+    description:
+      "A collection of interactive 3D web apps and Three.js demos showcasing advanced animation and UI techniques.",
+    tags: [
+      { name: "three.js", color: "blue-text-gradient" },
+      { name: "framer-motion", color: "green-text-gradient" },
+      { name: "react-three-fiber", color: "pink-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+];
+
+export { services, skills, experiences, projects };

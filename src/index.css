@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #050816;
+  --color-secondary: #aaa6c3;
+  --color-tertiary: #151030;
+  
+  --color-black-100: #100d25;
+  --color-black-200: #090325;
+  --color-white-100: #f3f3f3;
+
+  --font-sans: "Inter", "Outfit", ui-sans-serif, system-ui;
+
+  --shadow-card: 0px 35px 120px -15px #211e35;
+  --shadow-premium: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+  --background-image-hero-pattern: url('/src/assets/herobg.png');
+}
+
+@layer base {
+  :root {
+    --primary: #050816;
+    --accent: #915eff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--primary);
+    color: white;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .glassmorphism-navbar {
+    background: rgba(5, 8, 22, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .premium-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .premium-shine::after {
+    content: "";
+    position: absolute;
+    top: -110%;
+    left: -210%;
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.13)
+    );
+    transform: rotate(30deg);
+  }
+
+  .premium-shine:hover::after {
+    left: 100%;
+    top: 100%;
+    opacity: 1;
+  }
+
+  .hash-span {
+    margin-top: -100px;
+    padding-bottom: 100px;
+    display: block;
+  }
+
+  .black-gradient {
+    background: #000000;
+    background: linear-gradient(to right, #434343, #000000);
+  }
+
+  .violet-gradient {
+    background: #804dee;
+    background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+  }
+
+  .green-pink-gradient {
+    background: #00cea8;
+    background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  }
+
+  .blue-text-gradient {
+    background: #56ccf2;
+    background: linear-gradient(to right, #2f80ed, #56ccf2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .green-text-gradient {
+    background: #11998e;
+    background: linear-gradient(to right, #38ef7d, #11998e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pink-text-gradient {
+    background: #ec008c;
+    background: linear-gradient(to right, #fc6767, #ec008c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #915eff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #804dee;
+}
