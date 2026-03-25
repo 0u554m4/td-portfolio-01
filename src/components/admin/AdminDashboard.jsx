@@ -4,7 +4,7 @@ import { signOut } from "firebase/auth";
 import { collection, query, orderBy, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db, auth } from "../../firebase";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Filter, SlidersHorizontal, RefreshCw, MessageSquare } from "lucide-react";
+import { Search, Filter, SlidersHorizontal, RefreshCw, MessageSquare, Menu, X } from "lucide-react";
 
 import AdminSidebar from "./AdminSidebar";
 import MessageCard from "./MessageCard";
@@ -18,6 +18,7 @@ const AdminDashboard = () => {
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterProcess, setFilterProcess] = useState("all");
   const [selectedMessage, setSelectedMessage] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
   const navigate = useNavigate();
 
@@ -108,23 +109,32 @@ const AdminDashboard = () => {
   }), [messages]);
 
   return (
-    <div className="min-h-screen bg-primary flex overflow-hidden">
+    <div className="min-h-screen bg-transparent flex overflow-hidden">
       <AdminSidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
         onLogout={handleLogout} 
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
       />
 
-      <main className="flex-1 ml-64 p-8 overflow-y-auto">
+      <main className="flex-1 lg:ml-64 p-4 sm:p-8 overflow-y-auto">
         <div className="max-w-6xl mx-auto">
           {/* Header & Stats */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 relative">
+            <button 
+              onClick={() => setIsSidebarOpen(true)}
+              className="lg:hidden p-3 bg-white/5 rounded-xl text-[#915eff] mb-2 shadow-lg glassmorphism border border-white/10"
+            >
+              <Menu size={24} />
+            </button>
+            
             <div>
-              <h1 className="text-white font-black text-[42px] leading-tight">
-                Developer Dashboard
+              <h1 className="text-white font-black text-[32px] sm:text-[42px] leading-tight capitalize">
+                {activeTab} Panel
               </h1>
-              <p className="text-secondary font-medium text-lg mt-1">
-                Manage your portfolio inquiries and system status.
+              <p className="text-secondary font-medium text-base sm:text-lg mt-1">
+                Welcome back, manager.
               </p>
             </div>
 

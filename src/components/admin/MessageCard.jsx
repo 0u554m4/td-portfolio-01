@@ -24,8 +24,8 @@ const MessageCard = ({
       layout
       onClick={() => onClick(message)}
       className={`p-6 rounded-3xl glassmorphism border cursor-pointer transition-all duration-300 ${
-        !isRead ? 'border-[#915eff]/40 bg-[#915eff]/5 shadow-lg shadow-[#915eff]/10 hover:border-[#915eff]/60' : 'border-white/5 opacity-80 hover:opacity-100 hover:border-white/20'
-      } flex flex-col gap-4 group relative hover:scale-[1.02] active:scale-[0.98]`}
+        !isRead ? 'border-[#915eff]/30 bg-[#915eff]/5 shadow-lg shadow-[#915eff]/10 hover:border-[#915eff]/50' : 'border-white/5 opacity-80 hover:opacity-100 hover:border-white/10'
+      } flex flex-col gap-4 group relative hover:scale-[1.01] active:scale-[0.99]`}
     >
       <div className="absolute top-4 right-4 flex gap-1 items-center">
         {!isRead && (
