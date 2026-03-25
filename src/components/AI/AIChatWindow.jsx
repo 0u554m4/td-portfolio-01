@@ -1,3 +1,5 @@
+// AI_DISABLED - To re-enable the AI Assistant window, comment back in the following code:
+/*
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, X, Bot, User } from "lucide-react";
@@ -49,7 +51,6 @@ const AIChatWindow = ({ messages, onSendMessage, onClose, isLoading }) => {
       exit={{ opacity: 0, y: 50, scale: 0.9 }}
       className='fixed bottom-32 right-8 w-[90vw] sm:w-[400px] h-[550px] glassmorphism rounded-3xl overflow-hidden z-[100] flex flex-col shadow-2xl border border-white/10'
     >
-      {/* Header */}
       <div className='p-6 border-b border-white/10 flex justify-between items-center bg-white/5'>
         <div className='flex items-center gap-3'>
           <div className='w-2 h-2 rounded-full bg-green-400 animate-pulse' />
@@ -63,7 +64,6 @@ const AIChatWindow = ({ messages, onSendMessage, onClose, isLoading }) => {
         </button>
       </div>
 
-      {/* Messages */}
       <div 
         ref={scrollRef}
         className='flex-1 overflow-y-auto p-6 scrollbar-thin scrollbar-thumb-white/10'
@@ -86,7 +86,6 @@ const AIChatWindow = ({ messages, onSendMessage, onClose, isLoading }) => {
         </div>
       </div>
 
-      {/* Input */}
       <form onSubmit={handleSubmit} className='p-6 bg-white/5 border-t border-white/10'>
         <div className='relative flex items-center'>
           <input
@@ -114,4 +113,9 @@ const AIChatWindow = ({ messages, onSendMessage, onClose, isLoading }) => {
   );
 };
 
+export default AIChatWindow;
+*/
+
+// Minimal dummy export
+const AIChatWindow = () => null;
 export default AIChatWindow;

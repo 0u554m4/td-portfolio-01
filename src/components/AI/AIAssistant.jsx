@@ -1,3 +1,5 @@
+// AI_DISABLED - To re-enable the AI Assistant, comment back in the following code:
+/*
 import React, { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { db } from "../../firebase";
@@ -97,4 +99,9 @@ const AIAssistant = () => {
   );
 };
 
+export default AIAssistant;
+*/
+
+// Minimal dummy export to prevent import errors if not commented out elsewhere
+const AIAssistant = () => null;
 export default AIAssistant;

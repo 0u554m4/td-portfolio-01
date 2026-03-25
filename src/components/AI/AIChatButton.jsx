@@ -1,3 +1,5 @@
+// AI_DISABLED - To re-enable the AI Assistant button, comment back in the following code:
+/*
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { MeshDistortMaterial, Sphere, Float } from "@react-three/drei";
@@ -24,7 +26,6 @@ const Orb = ({ isHovered }) => {
             roughness={0}
           />
         </Icosahedron>
-        {/* Outer wireframe glow */}
         <mesh scale={isHovered ? 1.4 : 1.2}>
           <icosahedronGeometry args={[1, 2]} />
           <meshBasicMaterial 
@@ -69,7 +70,6 @@ const AIChatButton = ({ onClick, isOpen }) => {
           <Orb isHovered={hovered} />
         </Canvas>
         
-        {/* Simple Label on Hover */}
         {hovered && !isOpen && (
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
@@ -84,4 +84,9 @@ const AIChatButton = ({ onClick, isOpen }) => {
   );
 };
 
+export default AIChatButton;
+*/
+
+// Minimal dummy export
+const AIChatButton = () => null;
 export default AIChatButton;

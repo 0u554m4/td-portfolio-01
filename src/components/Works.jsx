@@ -19,19 +19,19 @@ const ProjectCard = ({
   return (
     <motion.div variants={fadeIn(index % 2 === 0 ? "right" : "left", "spring", index * 0.5, 0.75)}>
       <Tilt
-        tiltMaxAngleX={45}
-        tiltMaxAngleY={45}
+        tiltMaxAngleX={15}
+        tiltMaxAngleY={15}
         scale={1.05}
         transitionSpeedMs={450}
-        className='bg-tertiary p-5 rounded-3xl sm:w-[360px] w-full glassmorphism border border-white/5 hover:border-white/20 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(145,94,255,0.2)] premium-shine'
+        className='p-5 rounded-3xl sm:w-[360px] w-full glassmorphism border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-[0_0_30px_rgba(145,94,255,0.4)] premium-shine overflow-hidden'
       >
         <div className='relative w-full h-[230px]'>
-          <div className='w-full h-full object-cover rounded-2xl bg-black-200 overflow-hidden relative group'>
-             {/* Premium dynamic gradient placeholder */}
+          <div className='w-full h-full object-cover rounded-2xl bg-white/5 glassmorphism overflow-hidden relative group'>
+             {/* Premium dynamic gradient placeholder with lower opacity */}
              <div className={`absolute inset-0 bg-gradient-to-br ${
-               index === 0 ? "from-indigo-600/30 to-purple-600/30" : 
-               index === 1 ? "from-blue-600/30 to-teal-600/30" : 
-               "from-pink-600/30 to-orange-600/30"
+               index === 0 ? "from-indigo-600/10 to-purple-600/10" : 
+               index === 1 ? "from-blue-600/10 to-teal-600/10" : 
+               "from-pink-600/10 to-orange-600/10"
              } flex flex-col items-center justify-center border border-white/5`}>
                  <div className="w-16 h-16 rounded-full bg-white/5 blur-xl absolute" />
                  <span className="text-white font-black text-4xl opacity-10 select-none">Project</span>

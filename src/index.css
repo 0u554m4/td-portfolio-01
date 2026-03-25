@@ -40,19 +40,55 @@
 }
 
 @layer components {
+  /* NUCLEAR Overrides for Permanent Transparency */
+  section,
+  .vertical-timeline,
+  .vertical-timeline *,
+  .vertical-timeline-element-content,
+  .vertical-timeline-element-content-arrow,
+  [class*="vertical-timeline-element-content"],
+  [class*="vertical-timeline-element--"] {
+    background-color: transparent !important;
+  }
+
+  /* Core Glassmorphism Utility */
   .glassmorphism {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 32px !important;
+  }
+
+  /* Specific Arrow and Line Styling */
+  .vertical-timeline-element-content-arrow {
+    border-right: 7px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .vertical-timeline::before {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Force ALL parent sections to be transparent */
+  section,
+  section > div,
+  .hash-span {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  .vertical-timeline-element-content-arrow {
+    border-right: 7px solid rgba(255, 255, 255, 0.1) !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
   }
 
   .glassmorphism-navbar {
-    background: rgba(5, 8, 22, 0.6);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(5, 8, 22, 0.4) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
   }
 
   .premium-shine {

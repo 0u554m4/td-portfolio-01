@@ -46,7 +46,7 @@ const Navbar = () => {
             <span className='text-[18px] font-bold text-white'>A</span>
           </div>
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Antigravity &nbsp;
+            oussama &nbsp;
             <span className='sm:block hidden'> | Developer</span>
           </p>
         </Link>
@@ -58,9 +58,15 @@ const Navbar = () => {
               className={`${
                 active === nav.title ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-300`}
-              onClick={() => setActive(nav.title)}
+              onClick={() => {
+                setActive(nav.title);
+                const element = document.getElementById(nav.id);
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              {nav.title}
             </li>
           ))}
           <li className='flex gap-4 items-center ml-4 border-l border-white/10 pl-4'>
@@ -83,6 +89,7 @@ const Navbar = () => {
           </li>
         </ul>
 
+        {/* Mobile Menu */}
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           <div className='w-[28px] h-[28px] flex items-center justify-center cursor-pointer'>
             {toggle ? (
@@ -107,9 +114,13 @@ const Navbar = () => {
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(nav.title);
+                    const element = document.getElementById(nav.id);
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
                   }}
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  {nav.title}
                 </li>
               ))}
             </ul>

@@ -17,7 +17,7 @@ const Hero = () => {
             variants={textVariant(0.1)}
             className={`font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2`}
           >
-            Hi, I'm <span className='text-[#915eff] drop-shadow-[0_0_15px_rgba(145,94,255,0.5)]'>Ouss Ama</span>
+            Hi, I'm <span className='text-[#915eff] drop-shadow-[0_0_15px_rgba(145,94,255,0.5)]'>Oussama</span>
           </motion.h1>
           <motion.p 
             variants={textVariant(0.2)}

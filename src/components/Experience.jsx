@@ -14,15 +14,14 @@ const ExperienceCard = ({ experience, index }) => {
   return (
     <VerticalTimelineElement
       position={side}
+      contentClassName="glassmorphism border border-white/10 premium-shine"
       contentStyle={{
-        background: "rgba(255, 255, 255, 0.02)",
+        background: "transparent",
+        boxShadow: "none",
         color: "#fff",
-        backdropFilter: "blur(20px)",
-        border: "1px solid rgba(255, 255, 255, 0.05)",
-        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
-        borderRadius: "32px",
+        padding: "2rem",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid rgba(255, 255, 255, 0.1)" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
@@ -60,37 +59,20 @@ const ExperienceCard = ({ experience, index }) => {
 const Experience = () => {
   return (
     <>
+
       <motion.div variants={textVariant()}>
         <p className='sm:text-[18px] text-[14px] text-secondary uppercase tracking-widest'>What I have done so far</p>
         <h2 className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Work Experience.</h2>
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
-        <VerticalTimeline animate={true}>
+        <VerticalTimeline>
           {experiences.map((experience, index) => (
-            <motion.div
+            <ExperienceCard
               key={`experience-${index}`}
-              initial='hidden'
-              whileInView='visible'
-              viewport={{ once: true, amount: 0.1 }}
-            variants={{
-                hidden: { 
-                  opacity: 0, 
-                  x: index % 2 === 0 ? -100 : 100 
-                },
-                visible: { 
-                  opacity: 1, 
-                  x: 0, 
-                  transition: { 
-                    type: "spring", 
-                    duration: 1.25, 
-                    delay: index * 0.4 
-                  } 
-                }
-              }}
-            >
-              <ExperienceCard experience={experience} index={index} />
-            </motion.div>
+              experience={experience}
+              index={index}
+            />
           ))}
         </VerticalTimeline>
       </div>
