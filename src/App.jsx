@@ -4,6 +4,7 @@ import { About, Contact, Experience, Hero, Navbar, Skills, Works, StarsCanvas } 
 import AdminLogin from "./components/admin/AdminLogin";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
+import { LanguageProvider } from "./utils/i18n";
 // AI Assistant - Re-enable by commenting back in:
 // import AIAssistant from "./components/AI/AIAssistant";
 
@@ -13,8 +14,8 @@ const Portfolio = () => (
       <Hero />
     </div>
     <About />
-    <Experience />
     <Skills />
+    <Experience />
     <Works />
     <div className='relative z-0'>
       <Contact />
@@ -24,26 +25,28 @@ const Portfolio = () => (
 
 const App = () => {
   return (
-    <HashRouter>
-      <div className='relative z-0'>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Portfolio />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route 
-            path="/admin/dashboard" 
-            element={
-              <ProtectedRoute>
-                <AdminDashboard />
-              </ProtectedRoute>
-            } 
-          />
-        </Routes>
-        <StarsCanvas />
-        {/* AI Assistant - Re-enable by commenting back in: */}
-        {/* <AIAssistant /> */}
-      </div>
-    </HashRouter>
+    <LanguageProvider>
+      <HashRouter>
+        <div className='relative z-0'>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Portfolio />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route 
+              path="/admin/dashboard" 
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              } 
+            />
+          </Routes>
+          <StarsCanvas />
+          {/* AI Assistant - Re-enable by commenting back in: */}
+          {/* <AIAssistant /> */}
+        </div>
+      </HashRouter>
+    </LanguageProvider>
   );
 };
 

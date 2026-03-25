@@ -5,6 +5,7 @@ import Tilt from "react-parallax-tilt";
 import { skills } from "../constants";
 import SectionWrapper from "../hoc/SectionWrapper";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useLanguage } from "../utils/i18n";
 
 const SkillCard = ({ name, index }) => (
   <motion.div
@@ -34,27 +35,37 @@ const SkillCard = ({ name, index }) => (
 );
 
 const Skills = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="relative z-0">
       
       <motion.div variants={textVariant()}>
-        <p className='sm:text-[18px] text-[14px] text-secondary uppercase tracking-widest'>Technical Expertise</p>
-        <h2 className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Skills.</h2>
+        <p className='sm:text-[18px] text-[14px] text-secondary uppercase tracking-widest'>{t('skills.subtitle')}</p>
+        <h2 className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>{t('skills.title')}</h2>
       </motion.div>
 
       <div className='mt-20 flex flex-col gap-16'>
-        {skills.map((category) => (
-          <div key={category.category}>
-            <h3 className='text-white text-[20px] font-semibold mb-8 border-l-4 border-indigo-500 pl-4'>
-              {category.category}
-            </h3>
-            <div className='flex flex-wrap items-center gap-6'>
-              {category.items.map((skill, index) => (
-                <SkillCard key={skill.name} name={skill.name} index={index} />
-              ))}
+        {skills.map((category) => {
+          const categoryIdMap = {
+            "Frontend": "frontend",
+            "Backend": "backend",
+            "Mobile & Desktop": "mobile"
+          };
+
+          return (
+            <div key={category.category}>
+              <h3 className='text-white text-[20px] font-semibold mb-8 border-l-4 border-indigo-500 pl-4'>
+                {t(`skills.categories.${categoryIdMap[category.category]}`)}
+              </h3>
+              <div className='flex flex-wrap items-center gap-6'>
+                {category.items.map((skill, index) => (
+                  <SkillCard key={skill.name} name={skill.name} index={index} />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

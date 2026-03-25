@@ -6,16 +6,17 @@ import { Github, ExternalLink } from "lucide-react";
 import { projects } from "../constants";
 import SectionWrapper from "../hoc/SectionWrapper";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useLanguage } from "../utils/i18n";
 
 const ProjectCard = ({
   index,
-  name,
-  description,
   tags,
-  image,
   source_code_link,
   live_demo_link,
+  t
 }) => {
+  const projKey = `proj${index + 1}`;
+
   return (
     <motion.div variants={fadeIn(index % 2 === 0 ? "right" : "left", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -35,8 +36,8 @@ const ProjectCard = ({
              } flex flex-col items-center justify-center border border-white/5`}>
                  <div className="w-16 h-16 rounded-full bg-white/5 blur-xl absolute" />
                  <span className="text-white font-black text-4xl opacity-10 select-none">Project</span>
-                 <span className="text-white/40 font-bold uppercase tracking-widest text-[10px] z-10">
-                    {name}
+                 <span className="text-white/40 font-bold uppercase tracking-widest text-[10px] z-10 text-center px-2">
+                    {t(`works.items.${projKey}.name`)}
                  </span>
              </div>
           </div>
@@ -58,17 +59,17 @@ const ProjectCard = ({
         </div>
 
         <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+          <h3 className='text-white font-bold text-[24px]'>{t(`works.items.${projKey}.name`)}</h3>
+          <p className='mt-2 text-secondary text-[14px]'>{t(`works.items.${projKey}.desc`)}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
             <p
-              key={`${name}-${tag.name}`}
+              key={`${projKey}-${tag.name}`}
               className={`text-[14px] ${tag.color}`}
             >
-              #{tag.name}
+               #{tag.name}
             </p>
           ))}
         </div>
@@ -78,11 +79,13 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className='sm:text-[18px] text-[14px] text-secondary uppercase tracking-widest'>My work</p>
-        <h2 className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Projects.</h2>
+        <p className='sm:text-[18px] text-[14px] text-secondary uppercase tracking-widest'>{t('works.subtitle')}</p>
+        <h2 className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>{t('works.title')}</h2>
       </motion.div>
 
       <div className='w-full flex'>
@@ -90,17 +93,20 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          {t('works.description')}
         </motion.p>
       </div>
 
       <div className='mt-20 flex flex-wrap gap-7'>
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard 
+             key={`project-${index}`} 
+             index={index} 
+             tags={project.tags} 
+             source_code_link={project.source_code_link} 
+             live_demo_link={project.live_demo_link} 
+             t={t} 
+          />
         ))}
       </div>
     </>

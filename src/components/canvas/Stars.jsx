@@ -64,14 +64,19 @@ const ShootingStarsGroup = ({ count = 6 }) => {
   );
 };
 
-const Galaxy = () => {
+const Galaxy = ({ 
+  position = [1.8, 1.2, -4], 
+  rotation = [0.4, 0.1, -0.2], 
+  color = '#f272c8',
+  scale = 1
+}) => {
   const ref = useRef();
 
   const [positions] = useState(() => {
-    const count = 3000;
+    const count = 4000;
     const positions = new Float32Array(count * 3);
     const arms = 3;
-    const radius = 2.5;
+    const radius = 2.5 * scale;
     const spin = 3.5;
 
     for (let i = 0; i < count; i++) {
@@ -96,12 +101,12 @@ const Galaxy = () => {
   });
 
   return (
-    <group position={[1.8, 1.2, -4]} rotation={[0.4, 0.1, -0.2]}>
+    <group position={position} rotation={rotation}>
       <Points ref={ref} positions={positions} stride={3} frustumCulled>
         <PointMaterial
           transparent
-          color='#f272c8'
-          size={0.0025}
+          color={color}
+          size={0.0025 * scale}
           sizeAttenuation={true}
           depthWrite={false}
           opacity={0.65}
@@ -403,6 +408,20 @@ const StarsCanvas = () => {
         <Suspense fallback={null}>
           <Stars />
           <Galaxy />
+          {/* Top view galaxy (facing camera exactly) */}
+          <Galaxy 
+            position={[-4.5, 2.5, -8]} 
+            rotation={[Math.PI / 2, 0, 0]} 
+            color="#5b6cf9" 
+            scale={0.8} 
+          />
+          {/* Distant background galaxy (same tilt as original) */}
+          <Galaxy 
+            position={[5.5, -2.5, -10]} 
+            rotation={[0.4, 0.1, -0.2]} 
+            color="#ff9f5a" 
+            scale={1.2} 
+          />
           <Constellation />
           <ShootingStarsGroup />
         </Suspense>

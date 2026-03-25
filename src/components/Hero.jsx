@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { textVariant } from "../utils/motion";
+import { useLanguage } from "../utils/i18n";
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className={`relative w-full h-screen mx-auto overflow-hidden`}>
       <div
@@ -13,14 +16,14 @@ const Hero = () => {
             variants={textVariant(0.1)}
             className={`font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2`}
           >
-            Hi, I'm <span className='text-[#915eff] drop-shadow-[0_0_15px_rgba(145,94,255,0.5)]'>Oussama</span>
+            {t('hero.greeting')} <span className='text-[#915eff] drop-shadow-[0_0_15px_rgba(145,94,255,0.5)]'>{t('hero.name')}</span>
           </motion.h1>
           <motion.p 
             variants={textVariant(0.2)}
             className={`text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2`}
           >
-            Building modern, high-performance <br className='sm:block hidden' />
-            applications for web, mobile, and desktop
+            {t('hero.subtitle')} <br className='sm:block hidden' />
+            {t('hero.subtitleBr')}
           </motion.p>
           
           <motion.div 
@@ -33,7 +36,7 @@ const Hero = () => {
               className='bg-[#915eff] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
               onClick={() => window.location.href = '#work'}
             >
-              View Projects
+              {t('hero.viewProjects')}
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -41,7 +44,7 @@ const Hero = () => {
               className='border border-[#915eff] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold'
               onClick={() => window.location.href = '#contact'}
             >
-              Contact Me
+              {t('hero.contactMe')}
             </motion.button>
           </motion.div>
         </div>

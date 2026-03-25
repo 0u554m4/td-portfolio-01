@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
 @import "tailwindcss";
-
 @theme {
   --color-primary: #050816;
   --color-secondary: #aaa6c3;
@@ -78,8 +78,35 @@
     background-color: transparent !important;
   }
 
-  .vertical-timeline-element-content-arrow {
+  .vertical-timeline-element--left .vertical-timeline-element-content-arrow {
     border-right: 7px solid rgba(255, 255, 255, 0.1) !important;
+    border-left: none !important;
+  }
+  .vertical-timeline-element--right .vertical-timeline-element-content-arrow {
+    border-left: 7px solid rgba(255, 255, 255, 0.1) !important;
+    border-right: none !important;
+  }
+
+  html[dir="rtl"] .vertical-timeline-element--left .vertical-timeline-element-content-arrow {
+    border-left: 7px solid rgba(255, 255, 255, 0.1) !important;
+    border-right: none !important;
+  }
+  html[dir="rtl"] .vertical-timeline-element--right .vertical-timeline-element-content-arrow {
+    border-right: 7px solid rgba(255, 255, 255, 0.1) !important;
+    border-left: none !important;
+  }
+
+  html[dir="rtl"] body {
+    font-family: "Cairo", sans-serif;
+  }
+
+  html[dir="rtl"] .vertical-timeline-element-content {
+    text-align: right;
+  }
+
+
+
+  .vertical-timeline-element-content-arrow {
     background: transparent !important;
     backdrop-filter: none !important;
   }
