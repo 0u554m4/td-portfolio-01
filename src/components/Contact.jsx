@@ -40,6 +40,8 @@ const Contact = () => {
         email: form.email,
         message: form.message,
         createdAt: serverTimestamp(),
+        status: "unread",
+        processingStatus: "pending",
       });
 
       setLoading(false);
