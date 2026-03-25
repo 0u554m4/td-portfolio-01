@@ -404,7 +404,13 @@ const Stars = (props) => {
 const StarsCanvas = () => {
   return (
     <div className='w-full h-full fixed inset-0 z-[-1] pointer-events-none bg-primary'>
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas 
+        camera={{ position: [0, 0, 1] }}
+        dpr={[1, 1.5]}
+        gl={{ antialias: true }}
+      >
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
         <Suspense fallback={null}>
           <Stars />
           <Galaxy />

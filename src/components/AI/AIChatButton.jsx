@@ -64,8 +64,13 @@ const AIChatButton = ({ onClick, isOpen }) => {
       onClick={onClick}
     >
       <div className='w-full h-full relative'>
-        <Canvas camera={{ position: [0, 0, 3] }}>
+        <Canvas 
+          camera={{ position: [0, 0, 3] }}
+          dpr={[1, 1.5]}
+          gl={{ antialias: true }}
+        >
           <ambientLight intensity={0.5} />
+          <directionalLight position={[10, 10, 5]} intensity={1.5} />
           <pointLight position={[10, 10, 10]} />
           <Orb isHovered={hovered} />
         </Canvas>
