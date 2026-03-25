@@ -49,9 +49,6 @@ const Navbar = () => {
             <div className='w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-white/10 glassmorphism'>
               <span className='text-[16px] sm:text-[18px] font-bold text-white'>O</span>
             </div>
-            {/* <p className='text-white text-[16px] sm:text-[18px] font-bold cursor-pointer hidden xs:block'>
-              oussama
-            </p> */}
           </Link>
         </div>
 
