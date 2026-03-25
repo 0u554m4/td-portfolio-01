@@ -31,10 +31,17 @@
     color-scheme: dark;
   }
 
-  body {
+  html, body {
     background-color: var(--primary);
     color: white;
     font-family: var(--font-sans);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  #root {
+    width: 100%;
     overflow-x: hidden;
   }
 }

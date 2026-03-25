@@ -405,7 +405,7 @@ const StarsCanvas = () => {
   return (
     <div className='w-full h-full fixed inset-0 z-[-1] pointer-events-none bg-primary'>
       <Canvas 
-        camera={{ position: [0, 0, 1] }}
+        camera={{ position: [0, 0, 1], fov: window.innerWidth < 640 ? 100 : 75 }}
         dpr={[1, 1.5]}
         gl={{ antialias: true }}
       >

@@ -101,7 +101,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className='sm:hidden flex flex-1 justify-end items-center'>
-          <div className='w-[28px] h-[28px] flex items-center justify-center cursor-pointer'>
+          <div className='w-[28px] h-[28px] flex items-center justify-center cursor-pointer z-[110] relative'>
             {toggle ? (
               <X className='text-white' onClick={() => setToggle(!toggle)} />
             ) : (
@@ -112,7 +112,7 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 glassmorphism absolute top-20 ${isRtl ? 'left-0' : 'right-0'} mx-4 my-2 min-w-[140px] z-[100] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 animate-in fade-in zoom-in duration-300`}
+            } p-6 glassmorphism absolute top-20 ${isRtl ? 'left-0' : 'right-0'} mx-4 my-2 min-w-[200px] z-[100] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 animate-in fade-in zoom-in duration-300`}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-5'>
               {navLinks.map((nav) => (
@@ -120,7 +120,7 @@ const Navbar = () => {
                   key={nav.id}
                   className={`font-poppins font-semibold cursor-pointer text-[18px] w-full py-2 border-b border-white/5 last:border-0 ${
                     active === nav.title ? "text-white" : "text-secondary"
-                  } hover:text-white transition-colors`}
+                  } hover:text-white transition-colors text-start`}
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(nav.title);

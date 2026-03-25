@@ -14,13 +14,13 @@ const Hero = () => {
         <div>
           <motion.h1 
             variants={textVariant(0.1)}
-            className={`font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2`}
+            className={`font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 ${useLanguage().isRtl ? 'text-right' : 'text-left'}`}
           >
             {t('hero.greeting')} <span className='text-[#915eff] drop-shadow-[0_0_15px_rgba(145,94,255,0.5)]'>{t('hero.name')}</span>
           </motion.h1>
           <motion.p 
             variants={textVariant(0.2)}
-            className={`text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2`}
+            className={`text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2 ${useLanguage().isRtl ? 'text-right' : 'text-left'}`}
           >
             {t('hero.subtitle')} <br className='sm:block hidden' />
             {t('hero.subtitleBr')}
@@ -28,7 +28,7 @@ const Hero = () => {
           
           <motion.div 
             variants={textVariant(0.3)}
-            className="mt-10 flex gap-5"
+            className={`mt-10 flex gap-5 ${useLanguage().isRtl ? 'flex-row-reverse' : 'flex-row'}`}
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
