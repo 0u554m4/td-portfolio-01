@@ -69,7 +69,7 @@ const Experience = () => {
         <h2 className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>{t('experience.title')}</h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col' dir="ltr">
+      <div className='mt-20 flex flex-col' dir={useLanguage().isRtl ? "rtl" : "ltr"}>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard

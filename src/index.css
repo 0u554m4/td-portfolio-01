@@ -29,6 +29,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     color-scheme: dark;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html, body {
@@ -119,6 +120,79 @@
     text-align: right;
   }
 
+  /* Global RTL Fixes for Vertical Timeline Component */
+  @media only screen and (max-width: 1169px) {
+    html[dir="rtl"] .vertical-timeline::before {
+      left: auto !important;
+      right: 18px !important;
+    }
+    html[dir="rtl"] .vertical-timeline-element-icon {
+      left: auto !important;
+      right: 0 !important;
+      margin-right: 0 !important;
+    }
+    html[dir="rtl"] .vertical-timeline-element-content {
+      margin-left: 0 !important;
+      margin-right: 60px !important;
+    }
+    html[dir="rtl"] .vertical-timeline-element-content-arrow {
+      left: auto !important;
+      right: 100% !important;
+      border-right-width: 0 !important;
+      border-left-width: 7px !important;
+      border-left-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+
+  /* Mobile Overflow Fix for Experience Section */
+  @media only screen and (max-width: 640px) {
+    .vertical-timeline-element-content {
+      padding: 1rem !important;
+      margin-left: 45px !important;
+      width: auto !important;
+      display: block !important;
+    }
+    html[dir="rtl"] .vertical-timeline-element-content {
+      margin-left: 0 !important;
+      margin-right: 45px !important;
+    }
+    .vertical-timeline-element-icon {
+      width: 32px !important;
+      height: 32px !important;
+      left: 10px !important;
+    }
+    html[dir="rtl"] .vertical-timeline-element-icon {
+      left: auto !important;
+      right: 10px !important;
+    }
+    .vertical-timeline::before {
+      left: 16px !important;
+    }
+    html[dir="rtl"] .vertical-timeline::before {
+      left: auto !important;
+      right: 16px !important;
+    }
+  }
+
+  /* Prevent any unintentional horizontal scroll */
+  * {
+    max-width: 100vw !important;
+    overflow-x: clip !important;
+  }
+  
+  html, body, #root {
+     overflow-x: hidden !important;
+     width: 100vw !important;
+     position: relative;
+  }
+
+  /* Specific fix for SectionWrapper padding on very small screens */
+  @media (max-width: 400px) {
+    .sm\:px-16.px-4 {
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+    }
+  }
 
 
   .vertical-timeline-element-content-arrow {

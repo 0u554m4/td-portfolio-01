@@ -28,12 +28,12 @@ const Hero = () => {
           
           <motion.div 
             variants={textVariant(0.3)}
-            className={`mt-10 flex gap-5 ${useLanguage().isRtl ? 'flex-row-reverse' : 'flex-row'}`}
+            className={`mt-10 flex flex-col sm:flex-row gap-5 ${useLanguage().isRtl ? 'sm:flex-row-reverse' : ''}`}
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className='bg-[#915eff] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+              className='bg-[#915eff] py-3 px-8 rounded-xl outline-none w-full sm:w-fit text-white font-bold shadow-md shadow-primary'
               onClick={() => window.location.href = '#work'}
             >
               {t('hero.viewProjects')}
@@ -41,7 +41,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className='border border-[#915eff] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold'
+              className='border border-[#915eff] py-3 px-8 rounded-xl outline-none w-full sm:w-fit text-white font-bold'
               onClick={() => window.location.href = '#contact'}
             >
               {t('hero.contactMe')}
