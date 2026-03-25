@@ -21,7 +21,7 @@ const ExperienceCard = ({ experience, index }) => {
         background: "transparent",
         boxShadow: "none",
         color: "#fff",
-        padding: "2rem",
+        padding: "1.25rem",
       }}
       date={t(`experience.items.item${index + 1}.date`)}
       iconStyle={{ background: experience.iconBg }}

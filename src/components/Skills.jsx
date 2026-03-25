@@ -10,23 +10,24 @@ import { useLanguage } from "../utils/i18n";
 const SkillCard = ({ name, index }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.1, 0.5)}
+    className="xs:w-28 w-[calc(50%-12px)]"
   >
     <Tilt
-      tiltMaxAngleX={15}
-      tiltMaxAngleY={15}
-      scale={1.1}
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
+      scale={1.05}
       transitionSpeedMs={450}
-      className="w-24 h-24 flex flex-col items-center justify-center gap-2 p-4 rounded-3xl bg-white/5 border border-white/10 glassmorphism hover:bg-white/10 transition-all hover:shadow-[0_0_30px_rgba(145,94,255,0.4)] group overflow-hidden premium-shine"
+      className="w-full h-28 flex flex-col items-center justify-center gap-2 p-4 rounded-3xl bg-white/5 border border-white/10 glassmorphism hover:bg-white/10 transition-all hover:shadow-[0_0_30px_rgba(145,94,255,0.4)] group overflow-hidden premium-shine"
     >
-      <div className='w-full h-full flex flex-col items-center justify-center text-white/70 group-hover:text-white text-[12px] font-bold text-center uppercase tracking-tighter overflow-hidden transition-colors'>
-         <div className="w-1 h-1 rounded-full bg-[#915eff] mb-2 blur-[1px] group-hover:scale-150 transition-transform" />
+      <div className='w-full h-full flex flex-col items-center justify-center text-white/70 group-hover:text-white text-[13px] font-bold text-center uppercase tracking-tighter overflow-hidden transition-colors'>
+         <div className="w-1.5 h-1.5 rounded-full bg-[#915eff] mb-2 blur-[1px] group-hover:scale-150 transition-transform shadow-[0_0_8px_#915eff]" />
          {name}
-         <div className="mt-2 w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
+         <div className="mt-2 w-full h-[3px] bg-white/10 rounded-full overflow-hidden">
             <motion.div 
               initial={{ width: 0 }}
-              whileInView={{ width: "80%" }}
+              whileInView={{ width: "85%" }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="h-full bg-gradient-to-r from-indigo-500 to-purple-500"
+              className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 shadow-[0_0_10px_rgba(129,140,248,0.5)]"
             />
          </div>
       </div>
