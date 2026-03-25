@@ -35,8 +35,9 @@ const Navbar = () => {
         scrolled ? "glassmorphism-navbar py-3" : "bg-transparent"
       }`}
     >
-      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-        <div className={`flex items-center gap-2 ${isRtl ? 'order-3' : 'order-1'}`}>
+      <div className='w-full flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-16'>
+        {/* Logo Cluster */}
+        <div className='flex items-center gap-2'>
           <Link
             to='/'
             className='flex items-center gap-2'
@@ -48,14 +49,14 @@ const Navbar = () => {
             <div className='w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-white/10 glassmorphism'>
               <span className='text-[16px] sm:text-[18px] font-bold text-white'>A</span>
             </div>
-            <p className='text-white text-[16px] sm:text-[18px] font-bold cursor-pointer'>
+            <p className='text-white text-[16px] sm:text-[18px] font-bold cursor-pointer hidden xs:block'>
               oussama
             </p>
           </Link>
         </div>
 
-        {/* Scaled-down Language Switcher for Mobile */}
-        <div className={`flex gap-1 items-center bg-white/5 border border-white/10 rounded-xl px-1 py-0.5 glassmorphism z-50 order-2 scale-90 sm:scale-100`}>
+        {/* Global Language Switcher */}
+        <div className='flex gap-1 items-center bg-white/5 border border-white/10 rounded-xl px-1 py-0.5 glassmorphism z-50 scale-90 sm:scale-100 mx-2'>
           {['en', 'fr', 'ar'].map((lang) => (
              <button
                key={lang}
@@ -69,8 +70,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Nav Links / Burger */}
-        <div className={`flex items-center ${isRtl ? 'order-1' : 'order-3'}`}>
+        {/* Desktop Nav Links / Mobile Burger */}
+        <div className='flex items-center'>
           <ul className='list-none hidden sm:flex flex-row gap-5 lg:gap-8 items-center'>
             {navLinks.map((nav) => (
               <li
@@ -90,14 +91,6 @@ const Navbar = () => {
                 {t(`nav.${nav.id}`)}
               </li>
             ))}
-            <li className={`flex gap-4 items-center ${isRtl ? 'mr-4 border-r pr-4' : 'ml-4 border-l pl-4'} border-white/10`}>
-              <a href='https://github.com/oussahmane' target='_blank' rel='noreferrer' className='text-secondary hover:text-white transition-colors'>
-                <Github size={20} />
-              </a>
-              <a href='https://www.linkedin.com/in/oussahmane/' target='_blank' rel='noreferrer' className='text-secondary hover:text-white transition-colors'>
-                <Linkedin size={20} />
-              </a>
-            </li>
           </ul>
 
           <div className='sm:hidden flex items-center'>

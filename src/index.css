@@ -144,26 +144,63 @@
     }
   }
 
-  /* Mobile Overflow Fix for Experience Section */
+  /* Aggressive Mobile Overflow Fix */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative;
+  }
+
+  /* Force Vertical Timeline to respect viewport */
+  .vertical-timeline {
+    width: 95% !important;
+    max-width: 1170px !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+  }
+
+  @media only screen and (max-width: 1169px) {
+    .vertical-timeline-element-content {
+      width: auto !important;
+      margin-left: 60px !important;
+    }
+    
+    html[dir="rtl"] .vertical-timeline-element-content {
+      margin-left: 0 !important;
+      margin-right: 60px !important;
+      text-align: right !important;
+    }
+
+    html[dir="rtl"] .vertical-timeline-element-icon {
+      left: auto !important;
+      right: 0 !important;
+    }
+
+    html[dir="rtl"] .vertical-timeline::before {
+      left: auto !important;
+      right: 18px !important;
+    }
+  }
+
   @media only screen and (max-width: 640px) {
     .vertical-timeline-element-content {
+      margin-left: 40px !important;
       padding: 1rem !important;
-      margin-left: 45px !important;
-      width: auto !important;
-      display: block !important;
     }
     html[dir="rtl"] .vertical-timeline-element-content {
       margin-left: 0 !important;
-      margin-right: 45px !important;
-    }
-    .vertical-timeline-element-icon {
-      width: 32px !important;
-      height: 32px !important;
-      left: 10px !important;
-    }
-    html[dir="rtl"] .vertical-timeline-element-icon {
-      left: auto !important;
-      right: 10px !important;
+      margin-right: 40px !important;
     }
     .vertical-timeline::before {
       left: 16px !important;
@@ -172,26 +209,16 @@
       left: auto !important;
       right: 16px !important;
     }
-  }
-
-  /* Prevent any unintentional horizontal scroll */
-  * {
-    max-width: 100vw !important;
-    overflow-x: clip !important;
-  }
-  
-  html, body, #root {
-     overflow-x: hidden !important;
-     width: 100vw !important;
-     position: relative;
-  }
-
-  /* Specific fix for SectionWrapper padding on very small screens */
-  @media (max-width: 400px) {
-    .sm\:px-16.px-4 {
-      padding-left: 0.75rem !important;
-      padding-right: 0.75rem !important;
+    .vertical-timeline-element-icon {
+      width: 32px !important;
+      height: 32px !important;
     }
+  }
+
+  /* Section Wrapper Strict Mode */
+  section {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
   }
 
 
