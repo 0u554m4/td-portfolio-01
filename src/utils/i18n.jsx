@@ -84,15 +84,71 @@ const translations = {
       items: {
         proj1: {
           name: "AgroAlim POS System",
-          desc: "A complete enterprise wholesale management suite featuring a web dashboard, desktop POS application, and mobile stock tracking."
+          desc: "Comprehensive enterprise wholesale management suite featuring a web dashboard and desktop POS integration developed with React and Electron."
         },
         proj2: {
           name: "Wholesale Marketplace",
-          desc: "A multi-platform marketplace connecting wholesale distributors with remote buyers, featuring real-time inventory and Flutter mobile app."
+          desc: "Multi-platform e-commerce ecosystem connecting distributors and buyers with real-time synchronization developed using Laravel and Flutter."
         },
         proj3: {
           name: "Portfolio Experiments",
-          desc: "A collection of interactive 3D web apps and Three.js demos showcasing advanced animation and UI techniques."
+          desc: "Collection of high-performance interactive 3D web applications and UI experiments showcased using React Three Fiber."
+        },
+        proj4: {
+          name: "BDL Banque Sponsoring",
+          desc: "Professional financial sponsorship management platform developed with Laravel to streamline institutional sponsorship workflows."
+        },
+        proj5: {
+          name: "Pet Shop Portal",
+          desc: "Full-stack e-commerce solution for pet products and services developed using PHP to optimize retail operations."
+        },
+        proj6: {
+          name: "Cybersecurity Website",
+          desc: "Professional corporate portal for cybersecurity services developed with PHP MVC to showcase advanced security solutions."
+        },
+        proj7: {
+          name: "Clinics Management Platform",
+          desc: "Advanced healthcare management system developed using Laravel and Vue.js to digitize clinical and hospital operations."
+        },
+        proj8: {
+          name: "School Events App",
+          desc: "Cross-platform mobile application developed with Flutter and Firebase for efficient academic event coordination."
+        },
+        proj9: {
+          name: "Advanced 3D Portfolio",
+          desc: "Highly interactive 3D portfolio showcase developed using React and Three.js for a premium digital experience."
+        },
+        proj10: {
+          name: "Strategic Landing Pages",
+          desc: "Collection of high-converting, performance-optimized marketing landing pages developed using PHP."
+        },
+        proj11: {
+          name: "Furniture Hardware Store",
+          desc: "Specialized inventory and B2B sales platform developed with Laravel and Vue.js for furniture hardware retailers."
+        },
+        proj12: {
+          name: "Ecommerce Enterprise",
+          desc: "Scalable enterprise-grade e-commerce platform with comprehensive management tools developed using Laravel."
+        },
+        proj13: {
+          name: "Intelligent Chat AI",
+          desc: "Advanced AI conversational platform integrated with state-of-the-art language models developed using Laravel."
+        },
+        proj14: {
+          name: "Digital Tech Agency",
+          desc: "Professional corporate portal for a technology startup developed with Laravel and Tailwind CSS."
+        },
+        proj15: {
+          name: "Real-time Messaging App",
+          desc: "Scalable instant communication platform with real-time synchronization developed using Laravel and Pusher."
+        },
+        proj16: {
+          name: "SaaS Multi-Vendor Marketplace",
+          desc: "Comprehensive multi-tenant SaaS marketplace developed with Laravel to support multiple vendors and storefronts."
+        },
+        proj17: {
+          name: "Restaurant Digital Suite",
+          desc: "Modern digital menu and reservation system developed using Laravel and Vue.js to enhance restaurant services."
         }
       }
     },
@@ -194,15 +250,71 @@ const translations = {
       items: {
         proj1: {
           name: "Système POS AgroAlim",
-          desc: "Suite complète de gestion de gros d'entreprise comprenant un tableau de bord web, une application de bureau POS et un suivi des stocks mobile."
+          desc: "Suite complète de gestion de gros pour entreprises comprenant un tableau de bord web et une intégration POS développée avec React et Electron."
         },
         proj2: {
           name: "Place de Marché de Gros",
-          desc: "Place de marché multiplateforme reliant les distributeurs en gros aux acheteurs, avec inventaire en temps réel et application mobile Flutter."
+          desc: "Écosystème e-commerce multiplateforme reliant distributeurs et acheteurs avec synchronisation en temps réel via Laravel et Flutter."
         },
         proj3: {
           name: "Expériences Portfolio",
-          desc: "Une collection d'applications web 3D interactives et de démos Three.js illustrant des techniques avancées d'animation et d'UI."
+          desc: "Collection d'applications web 3D interactives haute performance et d'expériences UI présentées avec React Three Fiber."
+        },
+        proj4: {
+          name: "Sponsoring BDL Banque",
+          desc: "Plateforme professionnelle de gestion des parrainages financiers développée avec Laravel pour optimiser les flux institutionnels."
+        },
+        proj5: {
+          name: "Portail Pet Shop",
+          desc: "Solution e-commerce complète pour produits et services animaliers développée avec PHP pour optimiser la vente au détail."
+        },
+        proj6: {
+          name: "Site de Cybersécurité",
+          desc: "Portail d'entreprise professionnel pour services de cybersécurité développé avec PHP MVC pour exposer des solutions de sécurité avancées."
+        },
+        proj7: {
+          name: "Plateforme de Gestion de Cliniques",
+          desc: "Système de gestion de santé avancé développé avec Laravel et Vue.js pour numériser les opérations cliniques et hospitalières."
+        },
+        proj8: {
+          name: "App d'Événements Scolaires",
+          desc: "Application mobile multiplateforme développée avec Flutter et Firebase pour une coordination efficace des événements académiques."
+        },
+        proj9: {
+          name: "Portfolio 3D Avancé",
+          desc: "Vitrine de portfolio 3D hautement interactive développée avec React et Three.js pour une expérience numérique premium."
+        },
+        proj10: {
+          name: "Landing Pages Stratégiques",
+          desc: "Collection de pages de destination marketing optimisées pour la conversion et la performance développées avec PHP."
+        },
+        proj11: {
+          name: "Quincaillerie de Meubles",
+          desc: "Plateforme spécialisée d'inventaire et de vente B2B développée avec Laravel et Vue.js pour les détaillants de matériel de mobilier."
+        },
+        proj12: {
+          name: "Entreprise E-commerce",
+          desc: "Plateforme e-commerce évolutive de qualité entreprise avec outils de gestion complets développée avec Laravel."
+        },
+        proj13: {
+          name: "Chat AI Intelligent",
+          desc: "Plateforme de conversation IA avancée intégrée à des modèles de langage de pointe développée avec Laravel."
+        },
+        proj14: {
+          name: "Agence Tech Digitale",
+          desc: "Portail d'entreprise professionnel pour une startup technologique développé avec Laravel et Tailwind CSS."
+        },
+        proj15: {
+          name: "App de Messagerie en Temps Réel",
+          desc: "Plateforme de communication instantanée évolutive avec synchronisation en temps réel développée avec Laravel et Pusher."
+        },
+        proj16: {
+          name: "Place de Marché Multi-Vendeurs",
+          desc: "Place de marché SaaS multi-tenante complète développée avec Laravel pour supporter plusieurs vendeurs et boutiques."
+        },
+        proj17: {
+          name: "Suite Digitale Restaurant",
+          desc: "Système de menu numérique et de réservation moderne développé avec Laravel et Vue.js pour améliorer les services de restauration."
         }
       }
     },
@@ -304,15 +416,71 @@ const translations = {
       items: {
         proj1: {
           name: "نظام AgroAlim نقاط البيع",
-          desc: "مجموعة متكاملة لإدارة البيع بالجملة تتميز بلوحة تحكم ويب وتطبيق سطح مكتب وتتبع مخزون عبر الموبايل."
+          desc: "مجموعة شاملة لإدارة البيع بالجملة للمؤسسات تتميز بلوحة تحكم ويب وتكامل مع نظام POS تم تطويره باستخدام React و Electron."
         },
         proj2: {
           name: "سوق الجملة",
-          desc: "سوق متعدد المنصات يربط موزعي الجملة بالمشترين عن بعد، ويتميز بمخزون في الوقت الفعلي وتطبيق موبايل Flutter."
+          desc: "نظام تجارة إلكترونية متعدد المنصات يربط الموزعين والمشترين مع مزامنة فورية تم تطويره باستخدام Laravel و Flutter."
         },
         proj3: {
           name: "تجارب معرض الأعمال",
-          desc: "مجموعة من تطبيقات الويب التفاعلية 3D وعروض Three.js التي تبرز الرسوم المتحركة المتقدمة وتقنيات واجهة المستخدم."
+          desc: "مجموعة من تطبيقات الويب ثلاثية الأبعاد التفاعلية عالية الأداء وتجارب واجهة المستخدم المعروضة باستخدام React Three Fiber."
+        },
+        proj4: {
+          name: "نظام رعاية بنك BDL",
+          desc: "منصة احترافية لإدارة الرعاية المالية تم تطويرها باستخدام Laravel لتبسيط سير عمل الرعاية المؤسسية."
+        },
+        proj5: {
+          name: "متجر مستلزمات الحيوانات",
+          desc: "حل تجارة إلكترونية شامل لمنتجات وخدمات الحيوانات الأليفة تم تطويره باستخدام PHP لتحسين عمليات التجزئة."
+        },
+        proj6: {
+          name: "موقع الأمن السيبراني",
+          desc: "بوابة مؤسسية احترافية لخدمات الأمن السيبراني تم تطويرها باستخدام PHP MVC لعرض حلول أمنية متقدمة."
+        },
+        proj7: {
+          name: "منصة إدارة العيادات",
+          desc: "نظام متقدم لإدارة الرعاية الصحية تم تطويره باستخدام Laravel و Vue.js لرقمنة عمليات العيادات والمستشفيات."
+        },
+        proj8: {
+          name: "تطبيق الفعاليات المدرسية",
+          desc: "تطبيق موبايل متعدد المنصات تم تطويره باستخدام Flutter و Firebase لتنسيق الفعاليات الأكاديمية بكفاءة."
+        },
+        proj9: {
+          name: "معرض أعمال ثلاثي الأبعاد",
+          desc: "عرض تفاعلي للغاية ثلاثي الأبعاد تم تطويره باستخدام React و Three.js لتوفير تجربة رقمية متميزة."
+        },
+        proj10: {
+          name: "صفحات هبوط استراتيجية",
+          desc: "مجموعة من صفحات الهبوط التسويقية المحسنة للأداء والمحولة للزوار تم تطويرها باستخدام PHP."
+        },
+        proj11: {
+          name: "متجر أجهزة الأثاث",
+          desc: "منصة متخصصة للمخزون ومبيعات B2B تم تطويرها باستخدام Laravel و Vue.js لتجار أجهزة الأثاث."
+        },
+        proj12: {
+          name: "مؤسسة التجارة الإلكترونية",
+          desc: "منصة تجارة إلكترونية قابلة للتطوير على مستوى المؤسسات مع أدوات إدارة شاملة تم تطويرها باستخدام Laravel."
+        },
+        proj13: {
+          name: "دردشة ذكاء اصطناعي",
+          desc: "منصة محادثة متقدمة تعمل بالذكاء الاصطناعي مدمجة مع أحدث نماذج اللغة تم تطويرها باستخدام Laravel."
+        },
+        proj14: {
+          name: "وكالة تقنية رقمية",
+          desc: "بوابة مؤسسية احترافية لشركة تقنية ناشئة تم تطويرها باستخدام Laravel و Tailwind CSS."
+        },
+        proj15: {
+          name: "تطبيق مراسلة فوري",
+          desc: "منصة اتصال فورية قابلة للتطوير مع مزامنة في الوقت الفعلي تم تطويرها باستخدام Laravel و Pusher."
+        },
+        proj16: {
+          name: "سوق SaaS متعدد البائعين",
+          desc: "سوق SaaS شامل متعدد المتاجر تم تطويره باستخدام Laravel لدعم العديد من البائعين والواجهات."
+        },
+        proj17: {
+          name: "الجناح الرقمي للمطاعم",
+          desc: "نظام قائمة رقمية وحجز حديث تم تطويره باستخدام Laravel و Vue.js لتعزيز خدمات المطاعم."
         }
       }
     },

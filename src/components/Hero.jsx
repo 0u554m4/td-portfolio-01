@@ -33,16 +33,28 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className='bg-[#915eff] py-3 px-8 rounded-xl outline-none w-full sm:w-fit text-white font-bold shadow-md shadow-primary'
-              onClick={() => window.location.href = '#work'}
+              className='bg-[#915eff] py-3 px-8 rounded-xl outline-none w-full sm:w-fit text-white font-bold shadow-md shadow-primary transition-all duration-300'
+              onClick={() => {
+                const element = document.getElementById("projects");
+                if (element) {
+                   const y = element.getBoundingClientRect().top + window.pageYOffset - 80;
+                   window.scrollTo({top: y, behavior: 'smooth'});
+                }
+              }}
             >
               {t('hero.viewProjects')}
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className='border border-[#915eff] py-3 px-8 rounded-xl outline-none w-full sm:w-fit text-white font-bold'
-              onClick={() => window.location.href = '#contact'}
+              className='border border-[#915eff] py-3 px-8 rounded-xl outline-none w-full sm:w-fit text-white font-bold transition-all duration-300'
+              onClick={() => {
+                const element = document.getElementById("contact");
+                if (element) {
+                   const y = element.getBoundingClientRect().top + window.pageYOffset - 80;
+                   window.scrollTo({top: y, behavior: 'smooth'});
+                }
+              }}
             >
               {t('hero.contactMe')}
             </motion.button>

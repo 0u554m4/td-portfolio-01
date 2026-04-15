@@ -1,12 +1,10 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import { About, Contact, Experience, Hero, Navbar, Skills, Works, StarsCanvas } from "./components";
 import AdminLogin from "./components/admin/AdminLogin";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 import { LanguageProvider } from "./utils/i18n";
-// AI Assistant - Re-enable by commenting back in:
-// import AIAssistant from "./components/AI/AIAssistant";
 
 const Portfolio = () => (
   <div className='relative z-0'>
@@ -23,28 +21,37 @@ const Portfolio = () => (
   </div>
 );
 
+const AppContent = () => {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
+  return (
+    <div className={`relative z-0 overflow-hidden ${isAdminRoute ? 'bg-[#0f172a]' : 'bg-primary'}`}>
+      {!isAdminRoute && <Navbar />}
+      <div className="relative z-0">
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route 
+            path="/admin/dashboard" 
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            } 
+          />
+        </Routes>
+      </div>
+      {!isAdminRoute && <StarsCanvas />}
+    </div>
+  );
+};
+
 const App = () => {
   return (
     <LanguageProvider>
       <HashRouter>
-        <div className='relative z-0 overflow-hidden'>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Portfolio />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route 
-              path="/admin/dashboard" 
-              element={
-                <ProtectedRoute>
-                  <AdminDashboard />
-                </ProtectedRoute>
-              } 
-            />
-          </Routes>
-          <StarsCanvas />
-          {/* AI Assistant - Re-enable by commenting back in: */}
-          {/* <AIAssistant /> */}
-        </div>
+        <AppContent />
       </HashRouter>
     </LanguageProvider>
   );

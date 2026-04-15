@@ -18,7 +18,7 @@ const ProjectCard = ({
   const projKey = `proj${index + 1}`;
 
   return (
-    <motion.div variants={fadeIn(index % 2 === 0 ? "right" : "left", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn(index % 2 === 0 ? "right" : "left", "spring", (index % 3) * 0.1, 0.75)}>
       <Tilt
         tiltMaxAngleX={15}
         tiltMaxAngleY={15}

@@ -164,6 +164,160 @@ const projects = [
     source_code_link: "https://github.com/",
     live_demo_link: "https://demo.com/",
   },
+  {
+    name: "BDL Banque Sponsoring",
+    description: "Financial sponsorship management system.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "mysql", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Pet Shop Ecosystem",
+    description: "Complete pet shop management and sales platform.",
+    tags: [
+      { name: "php", color: "blue-text-gradient" },
+      { name: "jquery", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Cybersecurity Website",
+    description: "Professional landing page for cybersecurity services.",
+    tags: [
+      { name: "php-mvc", color: "blue-text-gradient" },
+      { name: "tailwind", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Clinics & Hospitals Platform",
+    description: "Healthcare management system for medical facilities.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "vuejs", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "School Events App",
+    description: "Event coordination mobile app for students.",
+    tags: [
+      { name: "flutter", color: "blue-text-gradient" },
+      { name: "firebase", color: "pink-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Interactive 3D Portfolio",
+    description: "Advanced 3D portfolio showcase with animations.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "threejs", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Modern Landing Pages",
+    description: "Collection of high-converting marketing pages.",
+    tags: [
+      { name: "php", color: "blue-text-gradient" },
+      { name: "bootstrap", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Furniture Hardware Store",
+    description: "Inventory and sales for hardware retailers.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "vuejs", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Ecommerce Hub",
+    description: "Scalable e-commerce platform with full checkout.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "mysql", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Chat AI Tool",
+    description: "AI conversational interface for smart interactions.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "openai-api", color: "pink-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Tech Company Website",
+    description: "Corporate portal for a technology startup.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "tailwind", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Advanced Messaging App",
+    description: "Real-time chat platform with messaging features.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "pusher", color: "pink-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Multi-Vendor Marketplace",
+    description: "SaaS platform for multiple sellers and storefronts.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "stripe", color: "pink-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
+  {
+    name: "Restaurant Website",
+    description: "Digital menu and reservation system.",
+    tags: [
+      { name: "laravel", color: "blue-text-gradient" },
+      { name: "vuejs", color: "green-text-gradient" },
+    ],
+    image: "",
+    source_code_link: "https://github.com/",
+    live_demo_link: "https://demo.com/",
+  },
 ];
 
 export { services, skills, experiences, projects };
