@@ -46,7 +46,7 @@ const Skills = () => {
         <h2 className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>{t('skills.title')}</h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col gap-16'>
+      <div className='mt-20 flex flex-col gap-10 sm:gap-16'>
         {skills.map((category) => {
           const categoryIdMap = {
             "Frontend": "frontend",
@@ -56,10 +56,10 @@ const Skills = () => {
 
           return (
             <div key={category.category}>
-              <h3 className='text-white text-[20px] font-semibold mb-8 border-l-4 border-indigo-500 pl-4'>
+              <h3 className='text-white text-[20px] font-semibold mb-5 sm:mb-8 border-l-4 border-indigo-500 pl-4'>
                 {t(`skills.categories.${categoryIdMap[category.category]}`)}
               </h3>
-              <div className='flex flex-wrap items-center gap-6'>
+              <div className='flex flex-wrap items-center gap-4 sm:gap-6'>
                 {category.items.map((skill, index) => (
                   <SkillCard key={skill.name} name={skill.name} index={index} />
                 ))}

@@ -8,13 +8,13 @@ const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto overflow-hidden`}>
       <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto sm:px-16 px-6 flex flex-row items-start gap-5 z-10`}
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto sm:px-16 px-6 flex flex-col md:flex-row items-start gap-5 z-10`}
       >
 
-        <div>
+        <div className="w-full">
           <motion.h1 
             variants={textVariant(0.1)}
-            className={`font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 ${useLanguage().isRtl ? 'text-right' : 'text-left'}`}
+            className={`font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[40px] text-[32px] lg:leading-[98px] mt-2 ${useLanguage().isRtl ? 'text-right' : 'text-left'}`}
           >
             {t('hero.greeting')} <span className='text-[#915eff] drop-shadow-[0_0_15px_rgba(145,94,255,0.5)]'>{t('hero.name')}</span>
           </motion.h1>

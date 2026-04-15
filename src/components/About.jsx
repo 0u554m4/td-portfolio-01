@@ -52,7 +52,7 @@ const About = () => {
         {t('about.description')}
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10 justify-center'>
+      <div className='mt-20 flex flex-wrap gap-5 sm:gap-10 justify-center'>
         {services.map((service, index) => {
           const idMap = ['web', 'mobile', 'desktop', 'fullstack'];
           return (
