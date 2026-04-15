@@ -52,58 +52,60 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Global Language Switcher */}
-        <div className='flex gap-1 items-center bg-white/5 border border-white/10 rounded-xl px-1 py-0.5 glassmorphism z-50 scale-90 sm:scale-100 mx-2'>
-          {['en', 'fr', 'ar'].map((lang) => (
-             <button
-               key={lang}
-               onClick={() => setLanguage(lang)}
-               className={`text-[10px] sm:text-[14px] uppercase font-bold transition-all px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl ${
-                 language === lang ? 'bg-[#915eff] text-white' : 'text-secondary hover:text-white'
-               }`}
-             >
-               {lang}
-             </button>
-          ))}
-        </div>
-
-        {/* Desktop Nav Links / Mobile Burger */}
-        <div className='flex items-center'>
-          <ul className='list-none hidden sm:flex flex-row gap-5 lg:gap-8 items-center'>
-            {navLinks.map((nav) => (
-              <li
-                key={nav.id}
-                className={`${
-                  active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[17px] lg:text-[18px] font-medium cursor-pointer transition-colors duration-300 whitespace-nowrap`}
-                onClick={() => {
-                  setActive(nav.title);
-                  const element = document.getElementById(nav.id);
-                  if (element) {
-                     const y = element.getBoundingClientRect().top + window.pageYOffset - 80;
-                     window.scrollTo({top: y, behavior: 'smooth'});
-                  }
-                }}
-              >
-                {t(`nav.${nav.id}`)}
-              </li>
+        {/* Right Side: Language + Nav */}
+        <div className='flex items-center gap-2 sm:gap-4'>
+          {/* Global Language Switcher */}
+          <div className='flex gap-1 items-center bg-white/5 border border-white/10 rounded-xl px-1 py-0.5 glassmorphism z-50 scale-90 sm:scale-100'>
+            {['en', 'fr', 'ar'].map((lang) => (
+               <button
+                 key={lang}
+                 onClick={() => setLanguage(lang)}
+                 className={`text-[10px] sm:text-[14px] uppercase font-bold transition-all px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl ${
+                   language === lang ? 'bg-[#915eff] text-white' : 'text-secondary hover:text-white'
+                 }`}
+               >
+                 {lang}
+               </button>
             ))}
-          </ul>
+          </div>
 
-          <div className='sm:hidden flex items-center'>
-            <div className='w-[28px] h-[28px] flex items-center justify-center cursor-pointer relative z-[110]'>
-              {toggle ? (
-                <X className='text-white' onClick={() => setToggle(!toggle)} />
-              ) : (
-                <Menu className='text-white' onClick={() => setToggle(!toggle)} />
-              )}
-            </div>
+          {/* Desktop Nav Links / Mobile Burger */}
+          <div className='flex items-center'>
+            <ul className='list-none hidden sm:flex flex-row gap-5 lg:gap-8 items-center'>
+              {navLinks.map((nav) => (
+                <li
+                  key={nav.id}
+                  className={`${
+                    active === nav.title ? "text-white" : "text-secondary"
+                  } hover:text-white text-[17px] lg:text-[18px] font-medium cursor-pointer transition-colors duration-300 whitespace-nowrap`}
+                  onClick={() => {
+                    setActive(nav.title);
+                    const element = document.getElementById(nav.id);
+                    if (element) {
+                       const y = element.getBoundingClientRect().top + window.pageYOffset - 80;
+                       window.scrollTo({top: y, behavior: 'smooth'});
+                    }
+                  }}
+                >
+                  {t(`nav.${nav.id}`)}
+                </li>
+              ))}
+            </ul>
 
-            <div
-              className={`${
-                !toggle ? "hidden" : "flex"
-              } p-6 glassmorphism absolute top-20 ${isRtl ? 'left-4' : 'right-4'} min-w-[200px] z-[100] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 animate-in fade-in zoom-in duration-300`}
-            >
+            <div className='sm:hidden flex items-center ml-2'>
+              <div className='w-[28px] h-[28px] flex items-center justify-center cursor-pointer relative z-[110]'>
+                {toggle ? (
+                  <X className='text-white' onClick={() => setToggle(!toggle)} />
+                ) : (
+                  <Menu className='text-white' onClick={() => setToggle(!toggle)} />
+                )}
+              </div>
+
+              <div
+                className={`${
+                  !toggle ? "hidden" : "flex"
+                } p-6 glassmorphism absolute top-14 ${isRtl ? 'left-4' : 'right-4'} min-w-[200px] z-[100] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 animate-in fade-in zoom-in duration-300`}
+              >
               <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
                 {navLinks.map((nav) => (
                   <li
@@ -127,6 +129,7 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </nav>

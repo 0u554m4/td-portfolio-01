@@ -15,7 +15,6 @@ const ExperienceCard = ({ experience, index }) => {
   
   return (
     <VerticalTimelineElement
-      position={side}
       contentClassName="glassmorphism border border-white/10 premium-shine"
       contentStyle={{
         background: "transparent",
@@ -84,4 +83,4 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, "experience");

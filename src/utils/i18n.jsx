@@ -5,6 +5,8 @@ const translations = {
     nav: {
       about: "About",
       skills: "Skills",
+      experience: "Experience",
+      projects: "Projects",
       work: "Work",
       contact: "Contact"
     },
@@ -113,6 +115,8 @@ const translations = {
     nav: {
       about: "À propos",
       skills: "Compétences",
+      experience: "Expérience",
+      projects: "Projets",
       work: "Projets",
       contact: "Contact"
     },
@@ -221,6 +225,8 @@ const translations = {
     nav: {
       about: "نبذة",
       skills: "المهارات",
+      experience: "الخبرات",
+      projects: "المشاريع",
       work: "الأعمال",
       contact: "تواصل"
     },

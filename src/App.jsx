@@ -27,7 +27,7 @@ const App = () => {
   return (
     <LanguageProvider>
       <HashRouter>
-        <div className='relative z-0'>
+        <div className='relative z-0 overflow-hidden'>
           <Navbar />
           <Routes>
             <Route path="/" element={<Portfolio />} />
